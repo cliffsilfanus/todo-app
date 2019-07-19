@@ -8,7 +8,11 @@ class Todo extends React.Component {
   render() {
     return (
       <li>
-        <input type="submit" value="X" />
+        <input
+          type="submit"
+          value="X"
+          onClick={() => this.props.xClick(this.props.index)}
+        />
         {this.props.todo.completed ? (
           <strike>{this.props.todo.taskText}</strike>
         ) : (
