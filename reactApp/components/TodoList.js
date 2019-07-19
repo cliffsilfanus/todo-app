@@ -14,6 +14,7 @@ class TodoList extends React.Component {
             index={step}
             todo={todo}
             xClick={index => this.props.todoXClick(index)}
+            toggleTodo={index => this.props.toggleTodo(index)}
           />
         ))}
       </ul>

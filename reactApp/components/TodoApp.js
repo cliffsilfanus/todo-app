@@ -31,6 +31,11 @@ class TodoApp extends React.Component {
     this.setState({ todos: dummyData });
   }
 
+  toggleTodo(index) {
+    dummyData[index].completed = !dummyData[index].completed;
+    this.setState({ todos: dummyData });
+  }
+
   render() {
     return (
       <React.Fragment>
@@ -38,6 +43,7 @@ class TodoApp extends React.Component {
         <TodoList
           todos={this.state.todos}
           todoXClick={index => this.removeTodo(index)}
+          toggleTodo={index => this.toggleTodo(index)}
         />
       </React.Fragment>
     );

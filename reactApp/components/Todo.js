@@ -13,11 +13,16 @@ class Todo extends React.Component {
           value="X"
           onClick={() => this.props.xClick(this.props.index)}
         />
-        {this.props.todo.completed ? (
-          <strike>{this.props.todo.taskText}</strike>
-        ) : (
-          this.props.todo.taskText
-        )}
+        <div
+          style={{ display: "inline" }}
+          onClick={() => this.props.toggleTodo(this.props.index)}
+        >
+          {this.props.todo.completed ? (
+            <strike>{this.props.todo.taskText}</strike>
+          ) : (
+            this.props.todo.taskText
+          )}
+        </div>
       </li>
     );
   }
